@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scan Scope Technologies | Non-Destructive Testing & Inspection</title>
+<meta name="description" content="Scan Scope Technologies delivers advanced non-destructive testing (NDT) for aerospace, pipeline, water infrastructure, security and construction industries.">
+<meta name="theme-color" content="#0F6BA8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B2D4D;
+    --ocean:#0F6BA8;
+    --sky:#2FA8D5;
+    --teal:#17A398;
+    --foam:#EAF6FA;
+    --paper:#F4F9FC;
+    --sky-bg:#DCF3FA;
+    --sky-bg-light:#EFFAFD;
+    --ink:#0B1F2E;
+    --ink-soft:#3E5A6C;
+    --line:#D7E7EF;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',Arial,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+  }
+  h1,h2,h3,h4{
+    font-family:'Space Grotesk',Arial,sans-serif;
+    color:var(--navy);
+    margin:0 0 0.5em;
+    line-height:1.15;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--ocean);
+    color:#fff;
+    padding:13px 26px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:15px;
+    border:1px solid var(--ocean);
+    cursor:pointer;
+    transition:background .18s ease, color .18s ease;
+  }
+  .btn:hover{background:var(--navy);border-color:var(--navy);}
+  .btn.ghost{
+    background:transparent;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.55);
+  }
+  .btn.ghost:hover{background:rgba(255,255,255,.12);}
+
+  /* ===== Header ===== */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,45,77,0.97);
+    backdrop-filter:blur(6px);
+  }
+  .nav-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 28px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand svg{height:38px;width:auto;}
+  .brand-text{color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;letter-spacing:.2px;}
+  .brand-text span{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:10.5px;letter-spacing:2.5px;color:var(--sky);}
+  nav ul{
+    list-style:none;display:flex;gap:30px;margin:0;padding:0;
+  }
+  nav ul li a{
+    color:#DCEEF6;font-size:14.5px;font-weight:500;
+    padding:6px 0;border-bottom:2px solid transparent;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  nav ul li a:hover{color:#fff;border-color:var(--sky);}
+  .nav-cta{display:flex;align-items:center;gap:18px;}
+  .menu-toggle{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer;}
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;
+    background:linear-gradient(160deg,var(--navy) 0%, var(--ocean) 62%, var(--teal) 130%);
+    color:#fff;
+    overflow:hidden;
+    padding:96px 0 0;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 64px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 64px);
+    opacity:.5;
+    pointer-events:none;
+  }
+  .hero-inner{
+    position:relative;
+    display:grid;grid-template-columns:1.05fr 0.85fr;gap:40px;
+    align-items:center;
+    padding-bottom:60px;
+  }
+  .eyebrow-line{
+    display:flex;align-items:center;gap:10px;
+    color:var(--sky);font-size:13.5px;font-weight:600;letter-spacing:1.5px;
+    margin-bottom:18px;
+  }
+  .eyebrow-line .dash{width:30px;height:2px;background:var(--sky);display:inline-block;}
+  .hero h1{
+    color:#fff;
+    font-size:clamp(34px,4.4vw,54px);
+    font-weight:700;
+    max-width:12.5ch;
+  }
+  .hero p.lead{
+    color:#D6ECF5;
+    font-size:17px;
+    max-width:46ch;
+    margin:18px 0 30px;
+  }
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+
+  .scope-graphic{
+    position:relative;
+    aspect-ratio:1/1;
+    max-width:420px;
+    margin:0 auto;
+  }
+  .scope-graphic svg{width:100%;height:100%;}
+
+  .stat-bar{
+    position:relative;
+    background:rgba(255,255,255,0.06);
+    border-top:1px solid rgba(255,255,255,.18);
+    padding:30px 0;
+  }
+  .stat-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+    text-align:center;
+  }
+  .stat-grid div strong{
+    display:block;font-family:'Space Grotesk',sans-serif;font-size:30px;color:#fff;font-weight:700;
+  }
+  .stat-grid div span{color:#BFE0EE;font-size:13px;letter-spacing:.3px;}
+
+  /* ===== Section shared ===== */
+  section{padding:88px 0;}
+  .section-head{
+    max-width:640px;
+    margin-bottom:48px;
+  }
+  .kicker{
+    color:var(--teal);font-weight:600;font-size:13.5px;letter-spacing:1.5px;
+    display:flex;align-items:center;gap:10px;margin-bottom:14px;
+  }
+  .kicker .dash{width:26px;height:2px;background:var(--teal);display:inline-block;}
+  .section-head h2{font-size:clamp(26px,3vw,36px);}
+  .section-head p{color:var(--ink-soft);font-size:16px;margin-top:12px;}
+
+  /* ===== Services (industries) ===== */
+  .who-we-are{background:var(--sky-bg);}
+  .who-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;
+  }
+  .who-grid p{color:var(--ink-soft);font-size:16px;margin-bottom:16px;}
+  .who-media{
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:linear-gradient(135deg,var(--foam),var(--sky-bg));
+    border:1px solid var(--line);
+  }
+
+  .services{background:var(--paper);}
+  .service-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+  }
+  .service-card{
+    background:var(--sky-bg-light);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:0;
+    overflow:hidden;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .service-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 16px 30px -18px rgba(11,45,77,.35);
+    border-color:var(--sky);
+  }
+  .service-media{
+    height:150px;
+    overflow:hidden;
+  }
+  .service-media img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .25s ease;
+  }
+  .service-card:hover .service-media img{transform:scale(1.05);}
+  .service-body{padding:24px 26px 28px;}
+  .service-icon{
+    width:46px;height:46px;border-radius:10px;
+    background:var(--foam);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;
+  }
+  .service-card h3{font-size:18px;margin-bottom:8px;}
+  .service-card p{color:var(--ink-soft);font-size:14.5px;margin:0;}
+
+  /* ===== Industries Served ===== */
+  .industries{background:var(--sky-bg);}
+  .industry-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  }
+  .industry-card{
+    position:relative;
+    background:linear-gradient(160deg,var(--navy),var(--ocean) 130%);
+    border-radius:var(--radius);
+    padding:26px 22px;
+    overflow:hidden;
+    min-height:170px;
+    display:flex;flex-direction:column;justify-content:flex-end;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .industry-card::before{
+    content:"";position:absolute;inset:0;
+    background-image:repeating-linear-gradient(45deg, rgba(255,255,255,.05) 0 2px, transparent 2px 14px);
+    opacity:.6;
+  }
+  .industry-card::after{
+    content:"";position:absolute;top:-40px;right:-40px;
+    width:120px;height:120px;border-radius:50%;
+    background:radial-gradient(circle, rgba(143,227,239,.35), transparent 70%);
+  }
+  .industry-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 18px 34px -18px rgba(11,45,77,.5);
+  }
+  .industry-card h3{
+    position:relative;color:#fff;font-size:16.5px;margin-bottom:6px;
+  }
+  .industry-card p{
+    position:relative;color:#CFE7F0;font-size:13px;margin:0;line-height:1.5;
+  }
+  .industry-tag{
+    position:relative;
+    display:inline-block;
+    color:var(--sky);
+    font-size:11px;font-weight:700;letter-spacing:1.5px;
+    margin-bottom:10px;
+  }
+
+  /* ===== Why choose us ===== */
+  .why{
+    background:var(--navy);
+    color:#fff;
+  }
+  .why .section-head h2, .why .kicker{color:#fff;}
+  .why .kicker{color:var(--sky);}
+  .why .section-head p{color:#BFDAE9;}
+  .why-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  }
+  .why-card{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--radius);
+    padding:30px 26px;
+  }
+  .why-card .num{
+    font-family:'Space Grotesk',sans-serif;
+    color:var(--sky);font-weight:700;font-size:15px;margin-bottom:14px;
+  }
+  .why-card h3{color:#fff;font-size:19px;}
+  .why-card p{color:#C7DEEB;font-size:14.5px;margin:0;}
+
+  /* ===== Methods strip ===== */
+  .methods{background:var(--sky-bg);}
+  .method-list{
+    display:flex;flex-wrap:wrap;gap:12px;
+  }
+  .method-pill{
+    border:1px solid var(--line);
+    background:var(--foam);
+    color:var(--navy);
+    padding:10px 18px;
+    border-radius:999px;
+    font-size:14px;font-weight:600;
+  }
+
+  /* ===== Equipment ===== */
+  .equipment{background:var(--sky-bg);}
+  .equipment-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+  }
+  .equipment-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:0;
+    overflow:hidden;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .equipment-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 16px 30px -18px rgba(11,45,77,.35);
+    border-color:var(--sky);
+  }
+  .equipment-media{
+    padding:0;
+    display:block;
+    height:190px;
+    overflow:hidden;
+    position:relative;
+  }
+  .equipment-media img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .25s ease;
+  }
+  .equipment-card:hover .equipment-media img{transform:scale(1.05);}
+  .equipment-body{padding:22px 24px 26px;}
+  .equipment-tag{
+    display:inline-block;
+    color:var(--teal);
+    font-size:11px;font-weight:700;letter-spacing:1.5px;
+    margin-bottom:8px;
+  }
+  .equipment-card h3{font-size:17.5px;margin-bottom:8px;}
+  .equipment-card p{color:var(--ink-soft);font-size:14px;margin:0;}
+
+  /* ===== CTA ===== */
+  .cta{
+    background:linear-gradient(120deg,var(--ocean),var(--teal));
+    color:#fff;
+    border-radius:22px;
+    padding:56px 48px;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:30px;
+    flex-wrap:wrap;
+  }
+  .cta h2{color:#fff;font-size:clamp(24px,3vw,32px);max-width:14ch;margin:0;}
+  .cta p{color:#E4F5F0;margin:10px 0 0;max-width:44ch;}
+
+  /* ===== Certifications ===== */
+  .certs{background:var(--paper);}
+  .cert-row{
+    display:flex;flex-wrap:wrap;gap:14px;
+  }
+  .cert-chip{
+    flex:1 1 150px;
+    text-align:center;
+    background:var(--sky-bg-light);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:20px 12px;
+    font-size:13px;
+    font-weight:600;
+    color:var(--ink-soft);
+  }
+
+  /* ===== Footer ===== */
+  footer{
+    background:var(--navy);
+    color:#CFE4EF;
+    padding:64px 0 28px;
+  }
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:40px;
+    padding-bottom:40px;
+    border-bottom:1px solid rgba(255,255,255,.14);
+  }
+  .footer-brand .brand-text{color:#fff;}
+  .footer-brand p{color:#9FC1D3;font-size:14px;margin:16px 0 0;max-width:32ch;}
+  footer h4{color:#fff;font-size:14.5px;letter-spacing:.5px;margin-bottom:16px;}
+  footer ul{list-style:none;margin:0;padding:0;}
+  footer ul li{margin-bottom:10px;}
+  footer ul li a{color:#B7D4E3;font-size:14.5px;}
+  footer ul li a:hover{color:#fff;}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-top:24px;flex-wrap:wrap;gap:12px;
+    font-size:13px;color:#89AFC2;
+  }
+  .socials{display:flex;gap:14px;}
+  .socials a{
+    width:34px;height:34px;border-radius:50%;
+    border:1px solid rgba(255,255,255,.2);
+    display:flex;align-items:center;justify-content:center;
+  }
+
+  /* ===== Floating Call button ===== */
+  .call-float{
+    position:fixed;
+    bottom:100px;
+    right:26px;
+    z-index:999;
+    width:62px;height:62px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--sky),var(--ocean));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 26px -6px rgba(15,107,168,.6), 0 4px 10px rgba(0,0,0,.18);
+    animation:wa-float 2.6s ease-in-out infinite;
+    animation-delay:.3s;
+  }
+  .call-float::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    background:rgba(47,168,213,.55);
+    animation:wa-pulse 2.2s ease-out infinite;
+    animation-delay:.3s;
+    z-index:-1;
+  }
+  .call-float svg{position:relative;}
+  .call-float:hover{
+    box-shadow:0 14px 30px -6px rgba(15,107,168,.75), 0 4px 10px rgba(0,0,0,.22);
+  }
+  .call-tooltip{
+    position:absolute;
+    right:74px;
+    top:50%;
+    transform:translateY(-50%) translateX(6px);
+    background:var(--navy);
+    color:#fff;
+    padding:9px 14px;
+    border-radius:8px;
+    font-size:13.5px;
+    font-weight:600;
+    white-space:nowrap;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .2s ease, transform .2s ease;
+    box-shadow:0 8px 18px -8px rgba(11,45,77,.5);
+  }
+  .call-tooltip::after{
+    content:"";
+    position:absolute;left:100%;top:50%;
+    transform:translateY(-50%);
+    border:6px solid transparent;
+    border-left-color:var(--navy);
+  }
+  .call-float:hover .call-tooltip{
+    opacity:1;
+    transform:translateY(-50%) translateX(0);
+  }
+  @media (max-width:600px){
+    .call-float{width:56px;height:56px;bottom:84px;right:18px;}
+    .call-tooltip{display:none;}
+  }
+
+  /* ===== Floating WhatsApp button ===== */
+  .whatsapp-float{
+    position:fixed;
+    bottom:26px;
+    right:26px;
+    z-index:999;
+    width:62px;height:62px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#25D366,#128C7E);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 26px -6px rgba(18,140,126,.6), 0 4px 10px rgba(0,0,0,.18);
+    animation:wa-float 2.6s ease-in-out infinite;
+  }
+  .whatsapp-float::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    background:rgba(37,211,102,.55);
+    animation:wa-pulse 2.2s ease-out infinite;
+    z-index:-1;
+  }
+  .whatsapp-float svg{width:32px;height:32px;position:relative;}
+  .whatsapp-float:hover{
+    box-shadow:0 14px 30px -6px rgba(18,140,126,.75), 0 4px 10px rgba(0,0,0,.22);
+  }
+  .whatsapp-tooltip{
+    position:absolute;
+    right:74px;
+    top:50%;
+    transform:translateY(-50%) translateX(6px);
+    background:var(--navy);
+    color:#fff;
+    padding:9px 14px;
+    border-radius:8px;
+    font-size:13.5px;
+    font-weight:600;
+    white-space:nowrap;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .2s ease, transform .2s ease;
+    box-shadow:0 8px 18px -8px rgba(11,45,77,.5);
+  }
+  .whatsapp-tooltip::after{
+    content:"";
+    position:absolute;left:100%;top:50%;
+    transform:translateY(-50%);
+    border:6px solid transparent;
+    border-left-color:var(--navy);
+  }
+  .whatsapp-float:hover .whatsapp-tooltip{
+    opacity:1;
+    transform:translateY(-50%) translateX(0);
+  }
+  @keyframes wa-pulse{
+    0%{transform:scale(1);opacity:.55;}
+    70%{transform:scale(1.55);opacity:0;}
+    100%{transform:scale(1.55);opacity:0;}
+  }
+  @keyframes wa-float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-6px);}
+  }
+  @media (max-width:600px){
+    .whatsapp-float{width:56px;height:56px;bottom:18px;right:18px;}
+    .whatsapp-float svg{width:28px;height:28px;}
+    .whatsapp-tooltip{display:none;}
+  }
+
+  @media (max-width:980px){
+    nav, .nav-cta .btn{display:none;}
+    .menu-toggle{display:block;}
+    .hero-inner{grid-template-columns:1fr;}
+    .scope-graphic{max-width:280px;}
+    .stat-grid{grid-template-columns:repeat(2,1fr);row-gap:26px;}
+    .who-grid{grid-template-columns:1fr;}
+    .service-grid{grid-template-columns:1fr 1fr;}
+    .industry-grid{grid-template-columns:1fr 1fr;}
+    .equipment-grid{grid-template-columns:1fr 1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:600px){
+    .service-grid{grid-template-columns:1fr;}
+    .industry-grid{grid-template-columns:1fr;}
+    .equipment-grid{grid-template-columns:1fr;}
+    .cta{flex-direction:column;align-items:flex-start;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-row">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="hmark" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0B3B5C"/>
+            <stop offset="55%" stop-color="#0F6BA8"/>
+            <stop offset="100%" stop-color="#1FB6C9"/>
+          </linearGradient>
+        </defs>
+        <rect width="120" height="120" rx="26" fill="url(#hmark)"/>
+        <circle cx="60" cy="60" r="38" fill="none" stroke="#EAF6FA" stroke-width="5"/>
+        <circle cx="60" cy="60" r="7" fill="#EAF6FA"/>
+        <line x1="60" y1="10" x2="60" y2="24" stroke="#EAF6FA" stroke-width="5" stroke-linecap="round"/>
+        <line x1="60" y1="96" x2="60" y2="110" stroke="#EAF6FA" stroke-width="5" stroke-linecap="round"/>
+        <line x1="10" y1="60" x2="24" y2="60" stroke="#EAF6FA" stroke-width="5" stroke-linecap="round"/>
+        <line x1="96" y1="60" x2="110" y2="60" stroke="#EAF6FA" stroke-width="5" stroke-linecap="round"/>
+        <rect x="0" y="52" width="120" height="16" fill="#8FE3EF" opacity="0.55"/>
+      </svg>
+      <span class="brand-text">Scan Scope<span>TECHNOLOGIES</span></span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#who-we-are">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#equipment">Equipment</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn" href="#contact">Request a Service</a>
+    </div>
+    <button class="menu-toggle" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" style="padding-top:0;">
+    <div class="wrap hero-inner">
+      <div>
+        <div class="eyebrow-line"><span class="dash"></span> NON-DESTRUCTIVE TESTING & INSPECTION</div>
+        <h1>Precision below the surface.</h1>
+        <p class="lead">Scan Scope Technologies is a Kenya-based NDT specialist helping aerospace, pipeline, water, security and construction clients find what the eye can't see — without ever touching the integrity of the asset.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="#contact">Request a service</a>
+          <a class="btn ghost" href="#services">View our services</a>
+        </div>
+      </div>
+
+      <div class="scope-graphic">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#8FE3EF" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#8FE3EF" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="200" cy="200" r="180" fill="url(#ringGlow)"/>
+          <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="1"/>
+          <circle cx="200" cy="200" r="110" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="1"/>
+          <circle cx="200" cy="200" r="70" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/>
+          <g stroke="#8FE3EF" stroke-width="2" opacity="0.9">
+            <path d="M200 30 A170 170 0 0 1 370 200" fill="none" stroke-dasharray="4 8"/>
+          </g>
+          <!-- ultrasonic waveform across the middle -->
+          <path d="M40 200 C 80 200, 90 140, 120 140 C 150 140, 150 260, 180 260 C 210 260, 210 120, 240 120 C 270 120, 270 280, 300 280 C 330 280, 340 200, 360 200"
+                fill="none" stroke="#EAF6FA" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="200" cy="200" r="6" fill="#fff"/>
+          <line x1="200" y1="30" x2="200" y2="370" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+          <line x1="30" y1="200" x2="370" y2="200" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="stat-bar">
+      <div class="wrap stat-grid">
+        <div><strong>6</strong><span>Core Inspection Services</span></div>
+        <div><strong>7+</strong><span>NDT Methods Applied</span></div>
+        <div><strong>8</strong><span>Industries Served</span></div>
+        <div><strong>100%</strong><span>Non-Destructive Approach</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHO WE ARE ================= -->
+  <section class="who-we-are" id="who-we-are">
+    <div class="wrap who-grid">
+      <div>
+        <div class="kicker"><span class="dash"></span>WHO WE ARE</div>
+        <h2>Revolutionizing non-destructive testing.</h2>
+        <p>In a field where precision and reliability are everything, Scan Scope Technologies has built a reputation as a forward-looking NDT partner. We design and apply advanced inspection methods across a wide range of materials, structures and assets — always without cutting, dismantling or damaging what we're testing.</p>
+        <p>Every engagement starts with the client's real operating conditions. Rather than applying one method everywhere, our engineers select and combine techniques so that inspection findings are accurate, repeatable and directly useful for the decisions our clients need to make.</p>
+        <a class="btn" href="#contact" style="background:var(--navy);border-color:var(--navy);">Talk to our team</a>
+      </div>
+      <div class="who-media">
+        <svg viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg" width="100%">
+          <rect width="500" height="420" fill="#F4F9FC"/>
+          <g opacity="0.9">
+            <rect x="60" y="260" width="380" height="14" rx="7" fill="#0F6BA8"/>
+            <rect x="60" y="260" width="380" height="14" rx="7" fill="none" stroke="#0B2D4D" stroke-width="1.5"/>
+            <circle cx="120" cy="267" r="26" fill="none" stroke="#17A398" stroke-width="3"/>
+            <circle cx="250" cy="267" r="26" fill="none" stroke="#17A398" stroke-width="3"/>
+            <circle cx="380" cy="267" r="26" fill="none" stroke="#17A398" stroke-width="3"/>
+          </g>
+          <path d="M100 150 L400 150" stroke="#2FA8D5" stroke-width="2" stroke-dasharray="6 6"/>
+          <path d="M90 90 C170 60, 330 60, 410 90" fill="none" stroke="#0B2D4D" stroke-width="3"/>
+          <text x="250" y="200" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="15" fill="#0B2D4D" font-weight="700" letter-spacing="1">ASSET INTEGRITY, VERIFIED</text>
+          <text x="250" y="222" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#3E5A6C">Ultrasonic · Radiographic · Magnetic Particle · Acoustic Emission</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker"><span class="dash"></span>OUR SERVICES</div>
+        <h2>Your trusted NDT partner.</h2>
+        <p>From aircraft components to city water mains, we tailor inspection programs to the material, the environment and the risk you're managing.</p>
+      </div>
+
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-media">
+            <img src="https://images.stockcake.com/public/b/b/8/bb8dd128-7829-4c7c-bb69-bf611dc19e1c_medium/jet-engine-inspection-stockcake.jpg" alt="Technicians inspecting a jet engine during aerospace maintenance" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="service-body">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M2 16L9 9l3 3 8-8" stroke="#0F6BA8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 4h6v6" stroke="#0F6BA8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Aerospace crack detection</h3>
+            <p>Reliable identification of surface and sub-surface cracks in aircraft components, using methods matched to the demands of aviation safety standards.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-media">
+            <img src="https://images.stockcake.com/public/4/e/2/4e2e865e-8d03-498f-abd6-0a4398457804_medium/engineer-inspecting-pipeline-stockcake.jpg" alt="Engineer inspecting industrial pipelines for leaks" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="service-body">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 12a4 4 0 004 4h2a4 4 0 004-4 4 4 0 014-4h2a4 4 0 014 4" stroke="#0F6BA8" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Pipeline leakage detection</h3>
+            <p>Guided wave, ultrasonic and acoustic emission testing to catch leaks early across oil, gas, water and chemical pipeline networks.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-media">
+            <img src="https://images.stockcake.com/public/f/9/1/f912e88b-c67e-469f-8a4b-54f173e03826_medium/industrial-pipe-inspection-stockcake.jpg" alt="Worker examining corroded oxidized industrial pipes" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="service-body">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2C9 6 6 9.5 6 13a6 6 0 0012 0c0-3.5-3-7-6-11z" stroke="#0F6BA8" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Corrosion in water pipes</h3>
+            <p>Years of contact between water and metal takes a toll. We assess corrosion and wall-thickness loss without opening up the line.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-media">
+            <img src="https://images.stockcake.com/public/6/1/1/61155c41-efca-4be0-b6b0-e9fca268337f_medium/security-checkpoint-inspection-stockcake.jpg" alt="Security officer inspecting luggage at a screening checkpoint" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="service-body">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#0F6BA8" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="#0F6BA8" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Explosives detection</h3>
+            <p>Industrial NDT imaging, neutron radiography and millimeter-wave scanning to non-intrusively screen objects and structures for concealed threats.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-media">
+            <img src="https://images.stockcake.com/public/f/0/f/f0fccd88-d52f-4a07-b2dd-bc6600d1427f_medium/inspecting-structural-damage-stockcake.jpg" alt="Building surveyor examining cracks in a brick wall" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="service-body">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M6 21V9l6-5 6 5v12" stroke="#0F6BA8" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Building crack detection</h3>
+            <p>Ultrasonic testing and industrial NDT imaging examine structural elements from the inside out, flagging voids and defects before they become hazards.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-media">
+            <img src="https://images.stockcake.com/public/c/7/4/c7400f24-1ff9-4e6d-a194-3af14452c5a4_medium/hazmat-suit-worker-stockcake.jpg" alt="Worker in a protective hazmat suit inspecting an industrial site" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="service-body">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M10 2v6L5 14a4 4 0 004 6h6a4 4 0 004-6l-5-6V2" stroke="#0F6BA8" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Hazardous site chemical cleaning</h3>
+            <p>Careful inspection of equipment and structures in corrosive or toxic environments, paired with ultrasonic and magnetic particle testing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INDUSTRIES SERVED ================= -->
+  <section class="industries" id="industries">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker"><span class="dash"></span>INDUSTRIES SERVED</div>
+        <h2>Wherever asset integrity matters.</h2>
+        <p>Our inspection programs are built around the operating realities of each sector — from offshore pipelines to city infrastructure.</p>
+      </div>
+
+      <div class="industry-grid">
+        <div class="industry-card">
+          <span class="industry-tag">01</span>
+          <h3>Pipeline</h3>
+          <p>Inspection across offshore and land-based pipeline networks, covering oil, gas, water and chemical transport lines.</p>
+        </div>
+        <div class="industry-card">
+          <span class="industry-tag">02</span>
+          <h3>Construction & Fabrication</h3>
+          <p>From large structural fabrication to vessels and heat exchangers, verified before and during the build.</p>
+        </div>
+        <div class="industry-card">
+          <span class="industry-tag">03</span>
+          <h3>Manufacturing</h3>
+          <p>Compliance-focused inspection for mission-critical manufactured components and equipment.</p>
+        </div>
+        <div class="industry-card">
+          <span class="industry-tag">04</span>
+          <h3>Marine</h3>
+          <p>Fast, accurate inspection for marine operators who need vessels back in service with minimal downtime.</p>
+        </div>
+        <div class="industry-card">
+          <span class="industry-tag">05</span>
+          <h3>Petrochemical & Refining</h3>
+          <p>Insight that helps refining and petrochemical operators avoid shutdowns and direct inspection resources.</p>
+        </div>
+        <div class="industry-card">
+          <span class="industry-tag">06</span>
+          <h3>Amusement</h3>
+          <p>Visual, magnetic particle and liquid dye penetrant inspection for rides and structures.</p>
+        </div>
+        <div class="industry-card">
+          <span class="industry-tag">07</span>
+          <h3>Aviation</h3>
+          <p>Detection of discontinuities in aircraft components that are impossible to see without disassembly.</p>
+        </div>
+        <div class="industry-card">
+          <span class="industry-tag">08</span>
+          <h3>Infrastructure</h3>
+          <p>Ongoing inspection of structures under everyday stress and fatigue, to help protect public safety.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY US ================= -->
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker"><span class="dash"></span>WHY CHOOSE US</div>
+        <h2>Where data meets strategy.</h2>
+        <p>We invest in the technology and the people behind every inspection, so what you get back is a finding you can act on.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="num">01</div>
+          <h3>Cutting-edge technology</h3>
+          <p>We stay ahead of NDT innovation, investing in the latest instruments so inspections stay precise and dependable.</p>
+        </div>
+        <div class="why-card">
+          <div class="num">02</div>
+          <h3>Expertise and experience</h3>
+          <p>Our engineers bring backgrounds in materials science and NDT practice, so findings come with real context, not just a report.</p>
+        </div>
+        <div class="why-card">
+          <div class="num">03</div>
+          <h3>Customized solutions</h3>
+          <p>No two assets are the same. We build inspection programs around your material, environment and timeline — not a one-size template.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= METHODS ================= -->
+  <section class="methods">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:28px;">
+        <div class="kicker"><span class="dash"></span>METHODS WE APPLY</div>
+        <h2>One toolkit, matched to the job.</h2>
+      </div>
+      <div class="method-list">
+        <span class="method-pill">Ultrasonic Testing (UT)</span>
+        <span class="method-pill">Guided Wave Testing</span>
+        <span class="method-pill">Acoustic Emission Testing</span>
+        <span class="method-pill">NDT Imaging</span>
+        <span class="method-pill">Neutron Radiography</span>
+        <span class="method-pill">Millimeter-Wave Scanning</span>
+        <span class="method-pill">Magnetic Particle Testing</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EQUIPMENT ================= -->
+  <section class="equipment" id="equipment">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker"><span class="dash"></span>OUR EQUIPMENT</div>
+        <h2>Field-ready inspection technology.</h2>
+        <p>We deploy purpose-built instruments for each method, kept calibrated and field-tested so every reading holds up under review.</p>
+      </div>
+
+      <div class="equipment-grid">
+        <div class="equipment-card">
+          <div class="equipment-media">
+            <img src="https://images.stockcake.com/public/4/4/1/441b26a0-fc99-4be9-a378-4b71f24cdb21_medium/worker-inspecting-pipeline-stockcake.jpg" alt="Technician inspecting a pipeline with a remote crawler system" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="equipment-body">
+            <span class="equipment-tag">CRAWLER SYSTEM</span>
+            <h3>Tripod-mounted inspection crawler</h3>
+            <p>A tripod-stabilized crawler with handheld controller for guided visual and remote inspection inside pipes, vessels and hard-to-reach structures.</p>
+          </div>
+        </div>
+
+        <div class="equipment-card">
+          <div class="equipment-media">
+            <img src="https://images.stockcake.com/public/b/3/2/b32b12df-6f83-4b02-8c4a-6c38b1c033a1_medium/industrial-equipment-inspection-stockcake.jpg" alt="Technician using a handheld digital ultrasonic thickness gauge" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="equipment-body">
+            <span class="equipment-tag">UT GAUGE</span>
+            <h3>Digital ultrasonic thickness gauge</h3>
+            <p>Handheld gauge with a probe on a coiled lead for fast, precise wall-thickness and corrosion readings on pipework, tanks and structural plate.</p>
+          </div>
+        </div>
+
+        <div class="equipment-card">
+          <div class="equipment-media">
+            <img src="https://images.stockcake.com/public/5/8/5/5856f4ee-b965-4120-9721-54c64cb63e6f_medium/focused-worker-inspecting-stockcake.jpg" alt="Technician preparing radiography equipment near piping" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="equipment-body">
+            <span class="equipment-tag">RADIOGRAPHY</span>
+            <h3>Portable X-ray radiography unit</h3>
+            <p>Pistol-grip X-ray source with tripod support for imaging welds, castings and internal structures without cutting into the asset.</p>
+          </div>
+        </div>
+
+        <div class="equipment-card">
+          <div class="equipment-media">
+            <img src="https://images.stockcake.com/public/f/0/2/f02d2435-a46d-4821-8273-050c16e1f840_medium/technician-examining-hardware-stockcake.jpg" alt="Technician examining sensor wiring on industrial equipment" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="equipment-body">
+            <span class="equipment-tag">AE MONITORING</span>
+            <h3>Acoustic emission sensor array</h3>
+            <p>Magnetic-mount sensors wired to a central logger, listening for stress waves in real time to flag crack growth and active leaks.</p>
+          </div>
+        </div>
+
+        <div class="equipment-card">
+          <div class="equipment-media">
+            <img src="https://images.stockcake.com/public/b/2/f/b2f1486c-3976-4c3c-b709-30284f269b75_medium/engineer-inspecting-gear-stockcake.jpg" alt="Engineer performing close inspection of metal components" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="equipment-body">
+            <span class="equipment-tag">MPI</span>
+            <h3>Magnetic particle inspection yoke</h3>
+            <p>Handheld electromagnetic yoke with power pack, used for surface and near-surface crack detection on ferromagnetic materials.</p>
+          </div>
+        </div>
+
+        <div class="equipment-card">
+          <div class="equipment-media">
+            <img src="https://images.stockcake.com/public/d/a/8/da846dfd-d2bb-4d9e-b7e6-9fbe81d78ecb_medium/technician-inspecting-equipment-stockcake.jpg" alt="Technician using a flashlight and scope to inspect internal machinery" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="equipment-body">
+            <span class="equipment-tag">VIDEO SCOPE</span>
+            <h3>Flexible video borescope</h3>
+            <p>Handheld display console with an articulating insertion tube for visual inspection deep inside engines, tanks and enclosed cavities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <h2>Have an upcoming project?</h2>
+          <p>At Scan Scope, we redefine inspection standards with methods built for accuracy and efficiency — tell us what you're working on.</p>
+        </div>
+        <a class="btn" style="background:#fff;color:var(--navy);border-color:#fff;" href="#contact">Request a callback</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CERTIFICATIONS ================= -->
+  <section class="certs" id="certifications">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:28px;">
+        <div class="kicker"><span class="dash"></span>STANDARDS</div>
+        <h2>Inspection you can standardize on.</h2>
+        <p>Our teams follow internationally recognized NDT methods and industry practice across every engagement.</p>
+      </div>
+      <div class="cert-row">
+        <div class="cert-chip">ISO 9001 Aligned Practice</div>
+        <div class="cert-chip">ASNT Method Standards</div>
+        <div class="cert-chip">API Inspection Practice</div>
+        <div class="cert-chip">Certified NDT Technicians</div>
+        <div class="cert-chip">HSE-Led Field Operations</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top">
+          <svg viewBox="0 0 120 120" width="34" xmlns="http://www.w3.org/2000/svg">
+            <rect width="120" height="120" rx="26" fill="#0F6BA8"/>
+            <circle cx="60" cy="60" r="38" fill="none" stroke="#EAF6FA" stroke-width="5"/>
+            <circle cx="60" cy="60" r="7" fill="#EAF6FA"/>
+            <rect x="0" y="52" width="120" height="16" fill="#8FE3EF" opacity="0.55"/>
+          </svg>
+          <span class="brand-text">Scan Scope<span>TECHNOLOGIES</span></span>
+        </a>
+        <p>Non-destructive testing and inspection for industries where structural integrity can't be left to chance.</p>
+        <div class="socials" style="margin-top:20px;">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter/X">X</a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#who-we-are">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#industries">Industries Served</a></li>
+          <li><a href="#equipment">Our Equipment</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Aerospace Crack Detection</a></li>
+          <li><a href="#services">Pipeline Leakage Detection</a></li>
+          <li><a href="#services">Corrosion Inspection</a></li>
+          <li><a href="#services">Explosives Detection</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li>Nairobi, Kenya</li>
+          <li><a href="tel:+254722629859">0722 629 859</a></li>
+          <li><a href="mailto:info@scanscope.co.ke">info@scanscope.co.ke</a></li>
+          <li><a href="https://scanscope.co.ke" target="_blank" rel="noopener">scanscope.co.ke</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Scan Scope Technologies. All rights reserved.</span>
+      <span>Inspection built on precision.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= FLOATING CALL + WHATSAPP BUTTONS ================= -->
+<a class="call-float" href="tel:+254722629859" aria-label="Call us">
+  <span class="call-tooltip">0722 629 859</span>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+    <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4.4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="#fff"/>
+  </svg>
+</a>
+
+<a class="whatsapp-float" href="https://wa.me/254722629859" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <span class="whatsapp-tooltip">Chat with us</span>
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+    <path d="M16.01 3C9.38 3 4 8.38 4 15.01c0 2.3.63 4.45 1.72 6.3L4 29l7.86-1.66a12.9 12.9 0 004.15.68h.01c6.63 0 12.01-5.38 12.01-12.01C28.03 8.38 22.65 3 16.01 3zm0 21.9h-.01a10.8 10.8 0 01-3.7-.68l-.53-.19-4.67.99.99-4.55-.21-.55a10.75 10.75 0 01-1.65-5.91c0-5.95 4.84-10.79 10.79-10.79s10.79 4.84 10.79 10.79-4.84 10.9-10.79 10.9zm5.92-8.09c-.32-.16-1.9-.94-2.2-1.05-.29-.11-.5-.16-.72.16-.21.32-.82 1.05-1 1.26-.19.21-.37.24-.69.08-.32-.16-1.36-.5-2.6-1.6-.96-.86-1.6-1.91-1.79-2.23-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.55-.08-.16-.72-1.74-.99-2.38-.26-.63-.53-.54-.72-.55h-.61c-.21 0-.55.08-.84.4-.29.32-1.1 1.08-1.1 2.63s1.13 3.05 1.29 3.26c.16.21 2.22 3.39 5.38 4.75.75.32 1.34.52 1.79.66.75.24 1.44.2 1.98.12.6-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.61-.37z"/>
+  </svg>
+</a>
+
+</body>
+</html>
