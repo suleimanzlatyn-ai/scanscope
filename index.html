@@ -1455,6 +1455,10 @@ main,section,footer,header{background-color:transparent!important;color:var(--ss
  .proof-grid{grid-template-columns:1fr}.proof-grid>div{padding:16px 0}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style><style>
+/* Safe final UI cleanup */
+#inspection-cursor{display:none!important}
+body{cursor:default!important}
 </style></head>
 <body>
 <header>
@@ -1956,5 +1960,7 @@ document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',
     if(filter!=='all'&&first) first.scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'});
   }));
 })();
-</script></body>
+</script>
+
+</body>
 </html>
