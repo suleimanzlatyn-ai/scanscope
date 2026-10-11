@@ -1,0 +1,15 @@
+/* ScanScope shared corporate design layer — preserves the homepage identity and hero animation. */
+:root{--ss-navy:#062D50;--ss-deep:#031E38;--ss-blue:#0878BD;--ss-sky:#1DA8E5;--ss-teal:#10B6B0;--ss-ink:#102F47;--ss-muted:#557084;--ss-line:#D7E6EF;--ss-pale:#F2F8FB;--ss-shadow:0 16px 42px rgba(4,39,66,.09)}
+html{scroll-padding-top:100px}
+body{color:var(--ss-ink)}
+a{transition:color .18s ease,background-color .18s ease,border-color .18s ease,box-shadow .18s ease}
+header{z-index:1000!important}
+.navlinks a[aria-current="page"],.nav-links a[aria-current="page"]{color:var(--ss-blue)!important}
+.navlinks a[aria-current="page"]::after,.nav-links a[aria-current="page"]::after{transform:scaleX(1)}
+.btn,.nav-cta,.navlinks a,.nav-links a{outline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--ss-sky);outline-offset:3px}
+main{min-height:55vh}
+footer{margin-top:0}
+img{height:auto}
+@media(max-width:900px){.wrap{width:min(100% - 32px,760px)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
