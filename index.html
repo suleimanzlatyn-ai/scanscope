@@ -7,6 +7,12 @@
 <title>ScanScope Technologies | Non-Destructive Testing &amp; Inspection</title>
 <meta content="ScanScope Technologies delivers advanced non-destructive testing and inspection services for pipelines, infrastructure, construction and industrial applications." name="description"/>
 <meta content="#0F6BA8" name="theme-color"/>
+<link rel="canonical" href="https://scanscopetechnologies.vercel.app/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="ScanScope Technologies"/>
+<meta property="og:title" content="ScanScope Technologies | Non-Destructive Testing &amp; Inspection"/>
+<meta property="og:description" content="Non-destructive testing and inspection services for industrial assets, pipelines, infrastructure and fabrication in Kenya."/>
+<meta property="og:url" content="https://scanscopetechnologies.vercel.app/"/>
 <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="favicon.svg" rel="apple-touch-icon"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -1712,7 +1718,7 @@ a:focus-visible,button:focus-visible,.clickable-card:focus-visible,input:focus-v
 <div class="kicker">Who We Are</div>
 <div class="section-head"><h2>Inspection you can<br/>build decisions on.</h2></div>
 <p>ScanScope Technologies provides professional non-destructive testing and inspection services designed to identify defects without damaging the asset being inspected.</p>
-<a class="btn" href="tel:+254721449727"><svg aria-hidden="true" class="icon"><use href="#icon-phone"></use></svg>  Learn More</a>
+<a class="btn" href="about.html"><svg aria-hidden="true" class="icon"><use href="#icon-phone"></use></svg>  Learn More</a>
 </div>
 <div class="feature-stack">
 <div aria-expanded="false" class="feature clickable-card" data-detail="who-we-are" role="button" tabindex="0"><div class="feature-icon"><svg aria-hidden="true" class="icon"><use href="#icon-check"></use></svg></div><div><h4>Non-Destructive</h4><p>Inspect components without unnecessarily damaging the asset.</p></div></div>
@@ -1914,7 +1920,7 @@ a:focus-visible,button:focus-visible,.clickable-card:focus-visible,input:focus-v
 </a>
 <p class="footer-desc">Non-destructive testing and inspection for industries where structural integrity cannot be left to chance.</p>
 </div>
-<div><h4>Navigation</h4><ul><li><a href="index.html#top">Home</a></li><li><a href="index.html#who-we-are">About</a></li><li><a href="capabilities.html">Services</a></li><li><a href="index.html#request-quote">Contact</a></li></ul></div>
+<div><h4>Navigation</h4><ul><li><a href="index.html#top">Home</a></li><li><a href="about.html">About</a></li><li><a href="capabilities.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
 <div><h4>Our Services</h4><ul><li>Ultrasonic Testing</li><li>Radiographic Testing</li><li>Visual Inspection</li><li>Thickness Measurement</li></ul></div>
 <div><h4>Contact</h4><ul><li><svg aria-hidden="true" class="icon"><use href="#icon-phone"></use></svg>  <a href="tel:+254721449727">0721 449 727</a></li><li><svg aria-hidden="true" class="icon"><use href="#icon-map-pin"></use></svg>  Kenya</li><li><svg aria-hidden="true" class="icon"><use href="#icon-chat"></use></svg>  <a href="https://wa.me/254721449727">WhatsApp</a></li></ul></div>
 </div>
@@ -2301,5 +2307,32 @@ header { isolation: isolate; }
 })();
 </script>
 
+
+<script>
+(function(){
+ const file=(location.pathname.split('/').pop()||'index.html').toLowerCase();
+ document.querySelectorAll('header nav a, footer nav a, footer .footlinks a, footer .footerlinks a').forEach(function(a){
+   const raw=(a.getAttribute('href')||'').split('#')[0].toLowerCase();
+   const target=raw||'index.html';
+   if(target===file && a.closest('header nav')) a.setAttribute('aria-current','page');
+   else if(a.closest('header nav')) a.removeAttribute('aria-current');
+ });
+ const menu=document.querySelector('header .menu');
+ const nav=document.querySelector('header .navlinks, header .nav-links');
+ if(menu&&nav){
+   menu.setAttribute('aria-controls',nav.id||'site-primary-navigation');
+   if(!nav.id) nav.id='site-primary-navigation';
+   menu.addEventListener('click',function(){
+     const open=nav.classList.contains('open');
+     nav.classList.toggle('open',!open);
+     menu.setAttribute('aria-expanded',String(!open));
+     menu.setAttribute('aria-label',open?'Open navigation':'Close navigation');
+     menu.textContent=open?'☰':'×';
+   });
+   nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open navigation');menu.textContent='☰';});});
+   document.addEventListener('keydown',function(e){if(e.key==='Escape'){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰';}});
+ }
+})();
+</script>
 </body>
 </html>
