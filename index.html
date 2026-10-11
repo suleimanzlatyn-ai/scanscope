@@ -2048,6 +2048,7 @@ document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',
 @media(prefers-reduced-motion:reduce){#services .service-card img{transition:none!important}}
 </style><script id="services-sticky-horizontal-js">
 (function(){
+  if(window.matchMedia('(max-width:700px)').matches) return;
   const section=document.getElementById('services');
   const track=section && section.querySelector('.service-grid');
   const hint=section && section.querySelector('.service-scroll-hint');
@@ -2143,12 +2144,179 @@ document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',
 })();
 </script>
 
-<script>
-(function(){const form=document.getElementById('inspection-request-form');if(!form)return;form.addEventListener('submit',function(event){event.preventDefault();if(!form.reportValidity())return;const data=new FormData(form);const message=['Inspection enquiry — ScanScope Technologies','Name: '+(data.get('Name')||''),'Company: '+(data.get('Company')||'Not provided'),'Email: '+(data.get('Email')||''),'Phone: '+(data.get('Phone')||'Not provided'),'Inspection requirements: '+(data.get('Message')||'')].join('\\n');window.open('https://wa.me/254721449727?text='+encodeURIComponent(message),'_blank','noopener');});})();
+
+
+
+
+<style id="scanscope-responsive-interactions-fix">
+/* Mobile-first interaction and layout fixes */
+button, a, [role="button"] { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+a, button { cursor: pointer; }
+header { isolation: isolate; }
+.nav-links { z-index: 1002; }
+.menu { min-width: 44px; min-height: 44px; border-radius: 10px; cursor: pointer; }
+@media (max-width: 950px) {
+  .nav { position: relative; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0; right: 0;
+    margin: 0;
+    padding: 12px;
+    gap: 0;
+    background: #f4fcff;
+    border: 1px solid #a9dff0;
+    border-radius: 14px;
+    box-shadow: 0 18px 45px rgba(3,38,66,.18);
+    flex-direction: column;
+    align-items: stretch;
+    max-height: calc(100svh - 100px);
+    overflow-y: auto;
+  }
+  .nav-links.is-open { display: flex !important; }
+  .nav-links a { display: block; padding: 14px 12px; font-size: 14px; border-radius: 8px; }
+  .nav-links a:hover, .nav-links a:focus-visible { background: #dff5fc; }
+  .nav-links a:first-child::after { display: none; }
+}
+@media (max-width: 700px) {
+  html { scroll-padding-top: 82px; }
+  section { scroll-margin-top: 82px; }
+  .wrap { width: calc(100% - 28px); }
+  .hero { min-height: 0; padding-bottom: 16px; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0,1fr); min-height: 0; gap: 12px; }
+  .hero h1 { font-size: clamp(42px, 12vw, 56px); line-height: .94; overflow-wrap: anywhere; }
+  .hero-copy { font-size: 14px; line-height: 1.65; }
+  .hero-media { width: 100%; height: clamp(210px, 58vw, 330px); margin: 0; border-radius: 14px; overflow: hidden; }
+  .hero-photo { border-radius: 14px; }
+  .actions { flex-wrap: wrap; }
+  .actions .btn { min-height: 46px; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .stat { min-width: 0; padding: 10px 6px; }
+  .stat strong { font-size: 20px; }
+  .stat span { font-size: 11px; }
+  #services .service-scroll-stage { display: contents !important; height: auto !important; }
+  #services .service-scroll-sticky { position: static !important; display: block !important; height: auto !important; min-height: 0 !important; overflow: visible !important; padding: 0 !important; }
+  #services .service-grid {
+    display: grid !important; grid-template-columns: minmax(0,1fr) !important;
+    width: 100% !important; min-width: 0 !important; max-width: 100% !important;
+    gap: 14px !important; padding: 4px 0 18px !important; margin: 0 !important;
+    transform: none !important; overflow: visible !important;
+  }
+  #services .service-card {
+    width: 100% !important; min-width: 0 !important; max-width: 100% !important;
+    flex: initial !important; height: 300px !important; min-height: 260px !important; max-height: none !important;
+  }
+  #services .service-progress, #services .service-scroll-status { display: none !important; }
+  .service-body.service-overlay-body { padding: 80px 16px 18px !important; }
+  .service-body.service-overlay-body h3 { font-size: 23px !important; }
+  .service-body.service-overlay-body p { font-size: 13px !important; }
+  .about-grid, .service-grid, .why-grid, .footer-grid, .capability-grid, .asset-grid, .credential-grid { min-width: 0; }
+  .about-grid { grid-template-columns: minmax(0,1fr) !important; }
+  .media-card { height: 240px; }
+  .horizontal { -webkit-overflow-scrolling: touch; }
+  .contact-form { padding: 20px !important; }
+  .form-grid { grid-template-columns: minmax(0,1fr) !important; }
+  .footer-grid { grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important; gap: 18px; }
+  .cta-inner { align-items: stretch; }
+  .cta .btn { min-height: 46px; }
+  .whatsapp { width: 50px; height: 50px; right: 14px; bottom: 14px; }
+}
+.clickable-card { cursor: pointer; }
+.clickable-card:active { transform: scale(.995); }
+.clickable-card[aria-expanded="true"] { outline: 2px solid rgba(8,120,189,.35); outline-offset: 2px; }
+.detail-panel.open { display: block; }
+</style>
+<script id="scanscope-interactions-repair">
+(function(){
+  const menu = document.getElementById('menu');
+  const nav = document.querySelector('.nav-links');
+  if (menu && nav) {
+    menu.setAttribute('aria-expanded','false');
+    menu.addEventListener('click', function(event) {
+      event.preventDefault();
+      const open = !nav.classList.contains('is-open');
+      nav.classList.toggle('is-open', open);
+      menu.setAttribute('aria-expanded', String(open));
+      menu.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      menu.textContent = open ? '×' : '☰';
+    });
+    nav.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        nav.classList.remove('is-open');
+        menu.setAttribute('aria-expanded','false');
+        menu.setAttribute('aria-label','Open menu');
+        menu.textContent='☰';
+      });
+    });
+    document.addEventListener('click', function(event){
+      if (!nav.contains(event.target) && !menu.contains(event.target)) {
+        nav.classList.remove('is-open');
+        menu.setAttribute('aria-expanded','false');
+        menu.setAttribute('aria-label','Open menu');
+        menu.textContent='☰';
+      }
+    });
+  }
+
+  function toggleCard(card) {
+    const key = card.getAttribute('data-detail');
+    if (!key) return;
+    const panel = document.getElementById('detail-' + key);
+    if (!panel) return;
+    const opening = !panel.classList.contains('open');
+    document.querySelectorAll('.detail-panel.open').forEach(function(p){ p.classList.remove('open'); });
+    document.querySelectorAll('.clickable-card[aria-expanded="true"]').forEach(function(c){ c.setAttribute('aria-expanded','false'); });
+    if (opening) {
+      panel.classList.add('open');
+      card.setAttribute('aria-expanded','true');
+      window.setTimeout(function(){
+        const rect = panel.getBoundingClientRect();
+        if (rect.top > window.innerHeight || rect.bottom < 0) panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+      }, 60);
+    }
+  }
+
+  document.querySelectorAll('.clickable-card[data-detail]').forEach(function(card){
+    card.addEventListener('click', function(event){
+      if (event.target.closest('a,button,input,textarea,select')) return;
+      toggleCard(card);
+    });
+    card.addEventListener('keydown', function(event){
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleCard(card);
+      }
+    });
+  });
+  document.querySelectorAll('.detail-close').forEach(function(button){
+    button.addEventListener('click', function(){
+      const panel = button.closest('.detail-panel');
+      if (panel) panel.classList.remove('open');
+      document.querySelectorAll('.clickable-card[aria-expanded="true"]').forEach(function(c){ c.setAttribute('aria-expanded','false'); });
+    });
+  });
+
+  const form = document.getElementById('inspection-request-form');
+  if (form) {
+    form.addEventListener('submit', function(event){
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      const data = new FormData(form);
+      const lines = [
+        'Inspection enquiry — ScanScope Technologies',
+        'Name: ' + (data.get('Name') || ''),
+        'Company: ' + (data.get('Company') || 'Not provided'),
+        'Email: ' + (data.get('Email') || ''),
+        'Phone: ' + (data.get('Phone') || 'Not provided'),
+        'Inspection requirements: ' + (data.get('Message') || '')
+      ];
+      const url = 'https://wa.me/254721449727?text=' + encodeURIComponent(lines.join('\n'));
+      window.location.href = url;
+    });
+  }
+})();
 </script>
 
-<script id="scanscope-enquiry-handler">
-(function(){const form=document.getElementById('inspection-request-form');if(!form)return;form.addEventListener('submit',function(event){event.preventDefault();if(!form.reportValidity())return;const data=new FormData(form);const message=['Inspection enquiry — ScanScope Technologies','Name: '+(data.get('Name')||''),'Company: '+(data.get('Company')||'Not provided'),'Email: '+(data.get('Email')||''),'Phone: '+(data.get('Phone')||'Not provided'),'Inspection requirements: '+(data.get('Message')||'')].join('\\n');window.open('https://wa.me/254721449727?text='+encodeURIComponent(message),'_blank','noopener');});})();
-</script>
 </body>
 </html>
