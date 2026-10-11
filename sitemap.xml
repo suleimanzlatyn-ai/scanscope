@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://scanscope.vercel.app/</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://scanscope.vercel.app/capabilities.html</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://scanscope.vercel.app/about.html</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://scanscope.vercel.app/industries.html</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://scanscope.vercel.app/quality.html</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://scanscope.vercel.app/contact.html</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://scanscope.vercel.app/projects.html</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://scanscope.vercel.app/equipment.html</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://scanscope.vercel.app/faq.html</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://scanscope.vercel.app/resources.html</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://scanscope.vercel.app/ultrasonic-testing.html</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://scanscope.vercel.app/radiographic-testing.html</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://scanscope.vercel.app/visual-inspection.html</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://scanscope.vercel.app/thickness-measurement.html</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://scanscope.vercel.app/remote-visual-inspection.html</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://scanscope.vercel.app/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://scanscope.vercel.app/about.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://scanscope.vercel.app/capabilities.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://scanscope.vercel.app/industries.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://scanscope.vercel.app/projects.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://scanscope.vercel.app/equipment.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://scanscope.vercel.app/quality.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://scanscope.vercel.app/resources.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://scanscope.vercel.app/faq.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://scanscope.vercel.app/contact.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://scanscope.vercel.app/visual-inspection.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://scanscope.vercel.app/ultrasonic-testing.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://scanscope.vercel.app/radiographic-testing.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://scanscope.vercel.app/thickness-measurement.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://scanscope.vercel.app/remote-visual-inspection.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
