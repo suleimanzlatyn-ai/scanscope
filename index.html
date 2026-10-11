@@ -1664,7 +1664,7 @@ a:focus-visible,button:focus-visible,.clickable-card:focus-visible,input:focus-v
 <div class="brand-sub">TECHNOLOGIES</div>
 </div>
 </a>
-<nav class="nav-links"><a href="#top">Home</a><a href="#who-we-are">About</a><a href="capabilities.html">Services &amp; Capabilities</a><a href="#request-quote">Contact</a></nav>
+<nav class="nav-links"><a href="index.html#top">Home</a><a href="about.html">About Us</a><a href="capabilities.html">Services</a><a href="industries.html">Industries</a><a href="quality.html">Quality &amp; Safety</a><a href="contact.html">Contact</a></nav>
 <a class="phone-btn" href="tel:+254721449727"><svg aria-hidden="true" class="icon"><use href="#icon-phone"></use></svg>  0721 449 727</a>
 <button aria-label="Open menu" class="menu" id="menu">☰</button>
 </div>
@@ -1890,10 +1890,7 @@ a:focus-visible,button:focus-visible,.clickable-card:focus-visible,input:focus-v
 <h2>Tell us about the inspection you need.</h2>
 <p>Prefer to write it down instead of calling? Share a few details and we'll get back to you.</p>
 </div>
-<form action="https://formsubmit.co/REPLACE_WITH_YOUR_EMAIL@example.com" class="contact-form" method="POST">
-<input name="_subject" type="hidden" value="New inspection request from Scan Scope website"/>
-<input name="_captcha" type="hidden" value="false"/>
-<input name="_template" type="hidden" value="table"/>
+<form action="#" class="contact-form" id="inspection-request-form" method="post">
 <div class="form-grid">
 <div class="form-field"><label for="cf-name">Full name</label><input id="cf-name" name="Name" required="" type="text"/></div>
 <div class="form-field"><label for="cf-company">Company</label><input id="cf-company" name="Company" type="text"/></div>
@@ -1917,7 +1914,7 @@ a:focus-visible,button:focus-visible,.clickable-card:focus-visible,input:focus-v
 </a>
 <p class="footer-desc">Non-destructive testing and inspection for industries where structural integrity cannot be left to chance.</p>
 </div>
-<div><h4>Navigation</h4><ul><li><a href="index.html#top">Home</a></li><li><a href="index.html#who-we-are">About</a></li><li><a href="capabilities.html">Services &amp; Capabilities</a></li><li><a href="index.html#request-quote">Contact</a></li></ul></div>
+<div><h4>Navigation</h4><ul><li><a href="index.html#top">Home</a></li><li><a href="index.html#who-we-are">About</a></li><li><a href="capabilities.html">Services</a></li><li><a href="index.html#request-quote">Contact</a></li></ul></div>
 <div><h4>Our Services</h4><ul><li>Ultrasonic Testing</li><li>Radiographic Testing</li><li>Visual Inspection</li><li>Thickness Measurement</li></ul></div>
 <div><h4>Contact</h4><ul><li><svg aria-hidden="true" class="icon"><use href="#icon-phone"></use></svg>  <a href="tel:+254721449727">0721 449 727</a></li><li><svg aria-hidden="true" class="icon"><use href="#icon-map-pin"></use></svg>  Kenya</li><li><svg aria-hidden="true" class="icon"><use href="#icon-chat"></use></svg>  <a href="https://wa.me/254721449727">WhatsApp</a></li></ul></div>
 </div>
@@ -2144,6 +2141,10 @@ document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',
     if(filter!=='all'&&first) first.scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'});
   }));
 })();
+</script>
+
+<script>
+(function(){const form=document.getElementById('inspection-request-form');if(!form)return;form.addEventListener('submit',function(event){event.preventDefault();if(!form.reportValidity())return;const data=new FormData(form);const message=['Inspection enquiry — Scan Scope Technologies','Name: '+(data.get('Name')||''),'Company: '+(data.get('Company')||'Not provided'),'Email: '+(data.get('Email')||''),'Phone: '+(data.get('Phone')||'Not provided'),'Inspection requirements: '+(data.get('Message')||'')].join('\\n');window.open('https://wa.me/254721449727?text='+encodeURIComponent(message),'_blank','noopener');});})();
 </script>
 </body>
 </html>
