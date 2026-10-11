@@ -6,7 +6,7 @@
 <title>Services &amp; Capabilities | ScanScope Technologies</title>
 <meta name="description" content="Explore NDT and inspection capabilities from ScanScope Technologies in Kenya. Discuss your asset, inspection scope, reporting requirements and project schedule with our team.">
 <meta name="theme-color" content="#062d50">
-<link rel="canonical" href="https://scanscopetechnologies.vercel.app/capabilities.html">
+<link rel="canonical" href="https://scanscope.vercel.app/capabilities.html">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,12 +29,22 @@ footer{background:#031e38;color:#fff;padding:35px 0 20px}.footergrid{display:fle
 @media(max-width:900px){.navlinks{gap:14px}.nav-cta{display:none}.hero-grid{gap:28px}.service{grid-template-columns:125px 1fr}.service-content{padding:17px}.methods-grid,.steps{grid-template-columns:repeat(2,1fr)}.industrygrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:680px){.wrap{width:min(1140px,calc(100% - 32px))}.nav{min-height:68px}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;padding:15px 20px 20px;background:#fff;border-bottom:1px solid var(--line);box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:0}.navlinks.open{display:flex}.navlinks a{padding:12px 5px;border-bottom:1px solid #edf3f7}.menu{display:block;margin-left:auto}.hero{padding:53px 0 46px}.hero-grid{grid-template-columns:1fr;gap:28px}.hero h1{font-size:43px;letter-spacing:-1.8px}.hero p{font-size:14px}.hero-visual img{height:245px}.visual-note{left:10px;bottom:10px;padding:12px 14px}.trustgrid{grid-template-columns:1fr;gap:14px;padding:18px 0}section{padding:54px 0}.servicegrid{grid-template-columns:1fr}.service{grid-template-columns:112px 1fr;min-height:200px}.service img{min-height:200px}.service-content{padding:15px}.service h3{font-size:16px}.service p{font-size:12px}.methods-grid,.steps,.industrygrid,.faqgrid,.qualitygrid{grid-template-columns:1fr}.industry{min-height:170px}.qualityimage{height:250px}.ctainner{align-items:flex-start;flex-direction:column}.footergrid{flex-direction:column}.footerlinks{gap:14px}.bottom{flex-direction:column}.section-head h2{letter-spacing:-.7px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
-</style>
+
+/* ScanScope corporate consistency layer — keeps existing logos and homepage motion intact. */
+:root{--scanscope-navy:#062d50;--scanscope-blue:#0878bd;--scanscope-cyan:#19a9d7;--scanscope-ink:#17384f;--scanscope-muted:#5a7182;--scanscope-line:#dce7ef}
+html{scroll-padding-top:105px} body{color:var(--scanscope-ink)}
+header{z-index:1000} header .nav,header .wrap.nav{position:relative}
+.navlinks a[aria-current="page"],.nav-links a[aria-current="page"]{color:var(--scanscope-blue)!important;font-weight:800!important;position:relative}
+.navlinks a[aria-current="page"]::after,.nav-links a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:3px;height:2px;border-radius:2px;background:var(--scanscope-cyan)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--scanscope-cyan)!important;outline-offset:3px!important}
+main a:not(.btn):not(.button):not(.nav-cta),footer a{transition:color .18s ease}
+@media(max-width:900px){.navlinks a[aria-current="page"]::after,.nav-links a[aria-current="page"]::after{display:none}.navlinks a[aria-current="page"],.nav-links a[aria-current="page"]{background:#edf7fc;border-radius:6px;padding-left:10px!important}}
+
 </head>
 <body>
 <header><div class="wrap nav">
 <a class="brand" href="index.html" aria-label="ScanScope Technologies home"><span class="logo" aria-hidden="true">S</span><span><span class="brand-name">Scan Scope</span><span class="brand-sub" style="display:block">TECHNOLOGIES</span></span></a>
-<nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="index.html#top">Home</a><a href="about.html">About Us</a><a href="capabilities.html">Services</a><a href="industries.html">Industries</a><a href="projects.html">Projects</a><a href="equipment.html">Equipment</a><a href="quality.html">Quality & Safety</a><a href="resources.html">Resources</a><a href="faq.html">FAQs</a><a href="contact.html">Contact</a></nav>
+<nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="capabilities.html">Services</a><a href="industries.html">Industries</a><a href="projects.html">Projects</a><a href="equipment.html">Equipment</a><a href="quality.html">Quality & Safety</a><a href="resources.html">Resources</a><a href="faq.html">FAQs</a><a href="contact.html">Contact</a></nav>
 <a class="nav-cta" href="contact.html">Request a Quote ↗</a><button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false" aria-controls="navlinks">☰</button>
 </div></header>
 <main>
@@ -103,6 +113,10 @@ footer{background:#031e38;color:#fff;padding:35px 0 20px}.footergrid{display:fle
 <footer><div class="wrap"><div class="footergrid"><div><a class="brand" href="index.html"><span class="logo" aria-hidden="true">S</span><span><span class="brand-name" style="color:#fff;display:block">Scan Scope</span><span class="brand-sub" style="display:block;color:#65d6ed">TECHNOLOGIES</span></span></a><p class="footerdesc">Non-destructive testing and inspection enquiries for industrial, construction and infrastructure requirements in Kenya.</p></div><nav class="footerlinks" aria-label="Footer navigation"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="capabilities.html">Services</a><a href="industries.html">Industries</a><a href="projects.html">Projects</a><a href="equipment.html">Equipment</a><a href="quality.html">Quality &amp; Safety</a><a href="resources.html">Resources</a><a href="faq.html">FAQs</a><a href="contact.html">Contact</a></nav></div><div class="bottom"><span>© 2026 ScanScope Technologies. All rights reserved.</span><span>Service availability and scope are confirmed per project.</span></div></div></footer>
 <script>
 const menu=document.getElementById('menu');const links=document.getElementById('navlinks');menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');menu.textContent=open?'×':'☰'});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open navigation');menu.textContent='☰'}));
+</script>
+
+<script id="scanscope-navigation-accessibility">
+(function(){var p=location.pathname.split('/').pop()||'index.html';if(p==='')p='index.html';document.querySelectorAll('.navlinks a,.nav-links a').forEach(function(a){var h=(a.getAttribute('href')||'').split('#')[0];if(!h)h='index.html';if(h===p){a.setAttribute('aria-current','page');}else{a.removeAttribute('aria-current');}});document.querySelectorAll('a[href^="#"]').forEach(function(a){var id=a.getAttribute('href');if(id&&id.length>1&&!document.getElementById(id.slice(1))){a.setAttribute('href','index.html'+id);}});})();
 </script>
 </body>
 </html>
