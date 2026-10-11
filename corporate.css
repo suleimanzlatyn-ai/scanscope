@@ -1,0 +1,21 @@
+/* ScanScope shared corporate system — homepage hero/logo animation intentionally untouched */
+:root{--ss-navy:#062D50;--ss-blue:#0878BD;--ss-sky:#1DA8E5;--ss-teal:#10B6B0;--ss-ink:#082B4A;--ss-muted:#49677d;--ss-line:#d5e7ef;--ss-pale:#eff8fc}
+body:not(.scanscope-home){font-family:Inter,"DM Sans",Arial,sans-serif!important;color:var(--ss-ink)!important;background:#fff!important;line-height:1.7}
+body:not(.scanscope-home) h1,body:not(.scanscope-home) h2,body:not(.scanscope-home) h3,body:not(.scanscope-home) h4{font-family:Inter,Manrope,Arial,sans-serif!important;letter-spacing:-.035em}
+body:not(.scanscope-home) header{background:rgba(255,255,255,.96)!important;border-bottom:1px solid var(--ss-line)!important;box-shadow:0 4px 22px rgba(6,45,80,.045)}
+body:not(.scanscope-home) .nav{min-height:76px}
+body:not(.scanscope-home) .brand-name{color:var(--ss-navy)!important}
+body:not(.scanscope-home) .brand-sub{color:var(--ss-blue)!important}
+body:not(.scanscope-home) .navlinks a,body:not(.scanscope-home) .nav-links a{font-size:12px!important;color:#294a61!important}
+body:not(.scanscope-home) .navlinks a[aria-current=page],body:not(.scanscope-home) .nav-links a[aria-current=page]{color:var(--ss-blue)!important}
+body:not(.scanscope-home) .nav-cta,body:not(.scanscope-home) .phone-btn,body:not(.scanscope-home) .btn{border-radius:7px!important;background:linear-gradient(135deg,var(--ss-navy),var(--ss-blue))!important;color:#fff!important}
+body:not(.scanscope-home) .page-hero{background:linear-gradient(120deg,#f0f8fc,#e4f4fa)!important;border-bottom:1px solid var(--ss-line)}
+body:not(.scanscope-home) .hero{background:linear-gradient(125deg,#062d50,#073e66 65%,#0878bd)!important}
+body:not(.scanscope-home) .eyebrow,body:not(.scanscope-home) .eyebrow.dark{color:var(--ss-blue)}
+body:not(.scanscope-home) .card,body:not(.scanscope-home) .contact-form{border-color:var(--ss-line);box-shadow:0 8px 28px rgba(6,45,80,.055)}
+body:not(.scanscope-home) .band{background:#f3f8fb!important}
+body:not(.scanscope-home) footer{background:#041e35!important;color:#e8f3f8!important}
+body:not(.scanscope-home) footer a{color:inherit}
+body:not(.scanscope-home) a:focus-visible,body:not(.scanscope-home) button:focus-visible,body:not(.scanscope-home) summary:focus-visible{outline:3px solid #10b6b0;outline-offset:3px}
+@media(max-width:900px){body:not(.scanscope-home) .nav{gap:12px}body:not(.scanscope-home) .navlinks,body:not(.scanscope-home) .nav-links{gap:10px;flex-wrap:wrap}body:not(.scanscope-home) .nav-cta{display:none}}
+@media(max-width:700px){body:not(.scanscope-home) .wrap{width:min(100% - 32px,1160px)}body:not(.scanscope-home) .nav{min-height:68px;flex-wrap:wrap}body:not(.scanscope-home) .navlinks,body:not(.scanscope-home) .nav-links{width:100%;margin:0;padding:0 0 14px;justify-content:flex-start;gap:12px 16px;overflow-x:auto}body:not(.scanscope-home) .hero{padding:48px 0}body:not(.scanscope-home) .hero-grid,body:not(.scanscope-home) .split,body:not(.scanscope-home) .contact-grid{grid-template-columns:1fr;gap:26px}body:not(.scanscope-home) main section{padding:48px 0}body:not(.scanscope-home) .grid3{grid-template-columns:1fr}body:not(.scanscope-home) .grid2{grid-template-columns:1fr}body:not(.scanscope-home) .cta{padding:28px;display:block}body:not(.scanscope-home) .cta .btn{margin-top:18px}body:not(.scanscope-home) .form-grid{grid-template-columns:1fr}}
