@@ -40,12 +40,20 @@ footer{background:#031e38;color:#fff;padding:35px 0 20px}.footergrid{display:fle
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://scanscope.vercel.app/capabilities.html">
 <meta name="twitter:card" content="summary_large_image">
-<style id="scanscope-corporate-consistency">:root{--navy:#062d50;--blue:#0878bd;--cyan:#1da8e5;--teal:#10b6b0;--ink:#102f47;--muted:#557084;--line:#d7e6ef;--pale:#f3f8fb}html{scroll-padding-top:100px}body{font-family:Inter,Arial,sans-serif;line-height:1.7}a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #1da8e5;outline-offset:3px}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}</style>
+<style id="scanscope-corporate-consistency">:root{--navy:#062d50;--blue:#0878bd;--cyan:#1da8e5;--teal:#10b6b0;--ink:#102f47;--muted:#557084;--line:#d7e6ef;--pale:#f3f8fb}html{scroll-padding-top:100px}body{font-family:Inter,Arial,sans-serif;line-height:1.7}a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #1da8e5;outline-offset:3px}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+/* ScanScope corporate consistency layer — preserve existing brand assets and motion. */
+:root{--scanscope-navy:#062d50;--scanscope-blue:#0878bd;--scanscope-cyan:#19a9d7;--scanscope-ink:#17384f;--scanscope-line:#dce7ef}
+html{scroll-padding-top:105px}body{color:var(--scanscope-ink)}header{z-index:1000}header .nav,header .wrap.nav{position:relative}
+.navlinks a[aria-current="page"],.nav-links a[aria-current="page"]{color:var(--scanscope-blue)!important;font-weight:800!important;position:relative}
+.navlinks a[aria-current="page"]::after,.nav-links a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:3px;height:2px;border-radius:2px;background:var(--scanscope-cyan)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--scanscope-cyan)!important;outline-offset:3px!important}
+@media(max-width:900px){.navlinks a[aria-current="page"]::after,.nav-links a[aria-current="page"]::after{display:none}.navlinks a[aria-current="page"],.nav-links a[aria-current="page"]{background:#edf7fc;border-radius:6px;padding-left:10px!important}}
+
 </head>
 <body>
 <header><div class="wrap nav">
 <a class="brand" href="index.html" aria-label="ScanScope Technologies home"><span class="logo" aria-hidden="true">S</span><span><span class="brand-name">Scan Scope</span><span class="brand-sub" style="display:block">TECHNOLOGIES</span></span></a>
-<nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="index.html#top">Home</a><a href="about.html">About Us</a><a href="capabilities.html">Services</a><a href="industries.html">Industries</a><a href="projects.html">Projects</a><a href="equipment.html">Equipment</a><a href="quality.html">Quality & Safety</a><a href="resources.html">Resources</a><a href="faq.html">FAQs</a><a href="contact.html">Contact</a></nav>
+<nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="capabilities.html">Services</a><a href="industries.html">Industries</a><a href="projects.html">Projects</a><a href="equipment.html">Equipment</a><a href="quality.html">Quality & Safety</a><a href="resources.html">Resources</a><a href="faq.html">FAQs</a><a href="contact.html">Contact</a></nav>
 <a class="nav-cta" href="contact.html">Request a Quote ↗</a><button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false" aria-controls="navlinks">☰</button>
 </div></header>
 <main>
@@ -117,5 +125,7 @@ const menu=document.getElementById('menu');const links=document.getElementById('
 </script>
 <script src="scanscope-shared.js" defer></script>
 <script id="scanscope-navigation-state">(function(){var p=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href')||'';if(/^(https?:|mailto:|tel:|#|javascript:)/i.test(h))return;var t=h.split('#')[0].split('?')[0].split('/').pop()||'index.html';if(t===p)a.setAttribute('aria-current','page');});})();</script>
+
+<script id="scanscope-navigation-accessibility">(function(){var p=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.navlinks a,.nav-links a').forEach(function(a){var h=(a.getAttribute('href')||'').split('#')[0]||'index.html';if(h===p)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});document.querySelectorAll('a[href^="#"]').forEach(function(a){var h=a.getAttribute('href');if(h&&h.length>1&&!document.getElementById(h.slice(1)))a.setAttribute('href','index.html'+h);});})();</script>
 </body>
 </html>
