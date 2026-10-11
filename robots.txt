@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://scanscopetechnologies.vercel.app/sitemap.xml
+Sitemap: https://scanscope.vercel.app/sitemap.xml
