@@ -34,6 +34,12 @@ footer{background:#031e38;color:#fff;padding:35px 0 20px}.footergrid{display:fle
 <link rel="stylesheet" href="corporate.css">
 <script>if((location.pathname.split('/').pop()||'index.html').toLowerCase()==='index.html')document.documentElement.classList.add('scanscope-home-page');</script>
 <script src="site-navigation.js" defer></script>
+<link rel="stylesheet" href="scanscope-shared.css">
+<meta property="og:title" content="Services &amp; Capabilities | ScanScope Technologies">
+<meta property="og:description" content="Explore NDT and inspection capabilities from ScanScope Technologies in Kenya. Discuss your asset, inspection scope, reporting requirements and project schedule with our team.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scanscope.vercel.app/capabilities.html">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 <header><div class="wrap nav">
@@ -108,5 +114,6 @@ footer{background:#031e38;color:#fff;padding:35px 0 20px}.footergrid{display:fle
 <script>
 const menu=document.getElementById('menu');const links=document.getElementById('navlinks');menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');menu.textContent=open?'×':'☰'});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open navigation');menu.textContent='☰'}));
 </script>
+<script src="scanscope-shared.js" defer></script>
 </body>
 </html>
