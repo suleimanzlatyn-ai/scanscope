@@ -85,8 +85,8 @@ header{
   70%{opacity:1;transform:translateX(5px) rotate(5deg) scale(1.07)}
   100%{opacity:1;transform:none}
 }
-.nav-links{display:flex;align-items:center;gap:27px;margin-left:auto}
-.nav-links a{font-size:12px;font-weight:700;color:var(--navy);position:relative}
+.nav-links{display:flex;align-items:center;gap:12px;margin-left:auto}
+.nav-links a{font-size:10.5px;font-weight:700;color:var(--navy);position:relative}
 .nav-links a:hover{color:var(--blue)}
 .nav-links a:first-child::after{content:"";position:absolute;left:0;right:0;bottom:-11px;height:2px;background:var(--blue)}
 .phone-btn,.btn{
@@ -1922,26 +1922,7 @@ a:focus-visible,button:focus-visible,.clickable-card:focus-visible,input:focus-v
 </div>
 </footer>
 <a aria-label="WhatsApp" class="whatsapp" href="https://wa.me/254721449727"><svg aria-hidden="true" class="icon"><use href="#icon-chat"></use></svg></a>
-<script>
-const menu=document.getElementById('menu');
-const navLinks=document.querySelector('.nav-links');
-menu.addEventListener('click',()=>{
-  navLinks.style.display = navLinks.style.display==='flex' ? 'none' : 'flex';
-  navLinks.style.position='absolute';
-  navLinks.style.top='72px';
-  navLinks.style.left='13px';
-  navLinks.style.right='13px';
-  navLinks.style.padding='16px';
-  navLinks.style.background='#eafaff';
-  navLinks.style.border='1px solid #a9dff0';
-  navLinks.style.borderRadius='12px';
-  navLinks.style.flexDirection='column';
-  navLinks.style.alignItems='flex-start';
-});
-document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{
-  if(window.innerWidth<=950) navLinks.style.display='none';
-}));
-</script>
+
 <script id="premium-image-uiux-script">
 (function(){
   const cards=document.querySelectorAll('.industry-card,.equipment-card,.service-card');
