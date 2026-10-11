@@ -1,0 +1,36 @@
+/* ScanScope shared corporate UI layer — preserves each page's existing content and the homepage hero. */
+:root{--ss-navy:#062d50;--ss-blue:#0878bd;--ss-cyan:#1da8e5;--ss-ink:#17384f;--ss-muted:#5a7182;--ss-line:#dce7ef;--ss-pale:#f4f8fb}
+html{scroll-padding-top:110px}
+body{overflow-wrap:break-word}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #19a9d7;outline-offset:3px}
+header{isolation:isolate}
+header .nav{min-height:76px;gap:18px}
+header .navlinks,header .nav-links{align-items:center;gap:clamp(8px,1.1vw,17px)}
+header .navlinks a,header .nav-links a{font-size:12px;font-weight:700;line-height:1.35;white-space:nowrap;transition:color .18s ease}
+header .navlinks a:hover,header .nav-links a:hover{color:var(--ss-blue)}
+header .navlinks a[aria-current="page"],header .nav-links a[aria-current="page"]{color:var(--ss-blue);font-weight:800}
+header .nav-cta,header .phone-btn{flex-shrink:0;white-space:nowrap}
+header .menu{cursor:pointer;flex-shrink:0}
+footer a:hover{color:var(--ss-cyan)}
+main section[id],section[id]{scroll-margin-top:110px}
+img{height:auto}
+@media(max-width:1100px){
+ header .nav{flex-wrap:wrap}
+ header .navlinks,header .nav-links{gap:10px}
+ header .navlinks a,header .nav-links a{font-size:11px}
+}
+@media(max-width:900px){
+ header .nav{position:relative;flex-wrap:nowrap;min-height:72px}
+ header .navlinks,header .nav-links{display:none;position:absolute;top:calc(100% + 1px);left:0;right:0;z-index:100;max-height:calc(100vh - 90px);overflow:auto;padding:16px;background:#fff;border:1px solid var(--ss-line);border-radius:0 0 14px 14px;box-shadow:0 18px 35px rgba(6,45,80,.15);align-items:stretch;gap:0}
+ header .navlinks.open,header .nav-links.open{display:flex;flex-direction:column}
+ header .navlinks a,header .nav-links a{font-size:14px;white-space:normal;padding:11px 8px;border-bottom:1px solid #edf2f6}
+ header .navlinks a:last-child,header .nav-links a:last-child{border-bottom:0}
+ header .nav-cta{margin-left:auto}
+}
+@media(max-width:520px){
+ .wrap{width:min(100% - 32px,1160px)}
+ header .nav{gap:10px}
+ header .nav-cta{font-size:11px;padding:10px 11px}
+ header .brand-name{font-size:14px}
+ header .brand-sub{font-size:9px;letter-spacing:.08em}
+}
